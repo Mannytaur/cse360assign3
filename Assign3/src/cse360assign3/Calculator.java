@@ -9,6 +9,8 @@ package cse360assign3;
 public class Calculator {
 	/** total will be the running total of the performed operations */
 	private int total;
+	/** history will be the history of the operations performed so far */
+	private String history = "0";
 	
 	/** The Calculator constructor will initialize the total to 0 */
 	public Calculator () {
@@ -30,6 +32,7 @@ public class Calculator {
 	 */
 	
 	public void add (int value) {
+		history = history + " + " + value;
 		total = total + value;		
 	}
 	
@@ -39,6 +42,7 @@ public class Calculator {
 	 */
 	
 	public void subtract (int value) {
+		history = history + " - " + value;
 		total = total - value;
 	}
 	
@@ -48,6 +52,7 @@ public class Calculator {
 	 */
 	
 	public void multiply (int value) {
+		history = history + " * " + value;
 		total = total * value;
 	}
 	
@@ -57,6 +62,7 @@ public class Calculator {
 	 */
 	
 	public void divide (int value) {
+		history = history + " / " + value;
 		if(value == 0)
 			total = 0;
 		else
@@ -69,6 +75,6 @@ public class Calculator {
 	 */
 	
 	public String getHistory () {
-		return "";
+		return history;
 	}
 }

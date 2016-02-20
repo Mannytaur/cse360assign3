@@ -57,6 +57,9 @@ public class CalculatorTest {
 	@Test
 	public void testgetHistory(){
 		Calculator test = new Calculator();
-		assertEquals("",test.getHistory());
+		test.add(3);
+		test.subtract(2);
+		test.divide(0);
+		assertEquals("0 + 3 - 2 / 0",test.getHistory());
 	}
 }
